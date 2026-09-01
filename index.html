@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Vectura Wanted</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{--ground:#F8F8F5;--surface:#FFFFFF;--ink:#1D2126;--muted:#66707E;--line:#E1E3DE;--line-strong:#C9CCC5;--accent:#2C4E96;--accent-ink:#FFF;--accent-soft:#EDF1F9;--ok:#2E7D5B;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#131619;--surface:#1C2126;--ink:#E6E8EB;--muted:#98A2B0;--line:#2A3038;--line-strong:#3A414B;--accent:#82A4E8;--accent-ink:#10151F;--accent-soft:#232B3A;--ok:#5CB893}}
+:root[data-theme="dark"]{--ground:#131619;--surface:#1C2126;--ink:#E6E8EB;--muted:#98A2B0;--line:#2A3038;--line-strong:#3A414B;--accent:#82A4E8;--accent-ink:#10151F;--accent-soft:#232B3A;--ok:#5CB893}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:26px 18px 90px}
+header{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:18px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500}
+h1{font-size:24px;font-weight:700;letter-spacing:-.01em;margin:6px 0 8px;text-wrap:balance}
+.lede{color:var(--muted);font-size:13.5px;margin:0;max-width:58ch}
+.sect{font-family:var(--mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:26px 0 11px}
+.card{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:16px;margin-bottom:14px}
+.card.done{border-color:var(--ok)}
+.chead{display:flex;align-items:baseline;gap:9px;margin-bottom:9px;flex-wrap:wrap}
+.wid{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.04em}
+.tag{font-family:var(--mono);font-size:10.5px;font-weight:600;background:var(--accent-soft);color:var(--accent);padding:2px 7px;border-radius:99px;letter-spacing:.08em}
+.tag.ok{background:var(--ok);color:var(--surface)}
+h2{font-size:16.5px;font-weight:700;margin:0;line-height:1.35;flex-basis:100%}
+.need{font-size:14.5px;margin:10px 0 12px}
+dl{margin:0;font-size:13px}
+dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
+dd{margin:3px 0 0}
+dd.dim{color:var(--muted)}
+details{margin-top:11px}
+summary{font-size:12.5px;color:var(--accent);cursor:pointer;font-weight:600}
+.form{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line-strong);display:grid;gap:11px}
+label{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:600}
+label .h{font-weight:400;color:var(--muted);font-size:11px}
+input,select,textarea{font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--ground);border:1px solid var(--line-strong);border-radius:5px;padding:10px;width:100%}
+input.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+textarea{min-height:54px;resize:vertical;font-size:15px}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.two{display:grid;gap:11px;grid-template-columns:1fr}
+@media(min-width:460px){.two{grid-template-columns:1.5fr 1fr}}
+button{font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;border-radius:5px;padding:11px 16px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink)}
+button.p{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button:hover{border-color:var(--accent)}
+.row{display:flex;gap:9px;flex-wrap:wrap}
+.ans{background:var(--accent-soft);border-radius:5px;padding:12px 13px;margin-top:12px;font-size:13.5px}
+.ans b{font-family:var(--mono);font-size:16px}
+.ans .meta{color:var(--muted);font-size:12px;margin-top:4px;line-height:1.5}
+.hint{font-size:12px;color:var(--muted);margin-top:9px}
+pre{font-family:var(--mono);font-size:11.5px;white-space:pre-wrap;word-break:break-word;background:var(--ground);border:1px solid var(--line);border-radius:5px;padding:11px;margin:11px 0 0;user-select:all;overflow-x:auto}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);font-family:var(--mono);line-height:1.75}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:2px solid var(--ink);padding:10px 18px}
+.bar .in{max-width:640px;margin:0 auto;display:flex;gap:11px;align-items:center}
+.bar .n{font-family:var(--mono);font-size:12.5px;flex:1;color:var(--muted)}
+.bar .n b{color:var(--ink)}
+.toast{position:fixed;bottom:74px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--ground);font-size:13px;font-weight:600;padding:9px 20px;border-radius:99px;opacity:0;transition:opacity .18s;pointer-events:none;z-index:9}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<div class="bar"><div class="in"><span class="n" id="bn"></span><button class="p" id="copyall">Copy answers</button></div></div>
+<div class="toast" id="toast"></div>
+
+<script id="items" type="application/json">
+[
+ {"id":"W-003","open":true,"market":"VN","title":"Zojirushi — a Japan-side price, or any 100V grey-import listing",
+  "need":"One rice-cooker model priced on BOTH sides of the border. Either a Japan-domestic model a Vietnamese dealer also sells, or a “Nội địa Nhật 100V” grey-import listing showing a Japan-domestic model priced in VND.",
+  "done":"A dealer page or a shop photo showing a Japan-domestic (100V) model with its VND price and the model number legible — donhatnoidia.com, tulanhnhatbai.com, japanshoptht.vn and congnghenhat.com all carry this category. Or any Vietnamese listing of a model that also exists on zojirushi.co.jp.",
+  "tried":"Both official line-ups were checked model by model. All seven Vietnamese codes (NL-AAQ, NL-GAQ, NP-BSQ, NP-HBQ, NP-HRQ, NS-RPQ, NP-VI) return zero results on zojirushi.co.jp — re-verified 2026-09-01, including the NL-AAQ18-CA found on the official Vietnamese distributor site. Tiger's Vietnamese line-up shares no live model code with its Japanese one either. The official channels cannot produce a matched pair; only the grey channel can.",
+  "why":"If the grey channel really is the only route to a same-model comparison, that unpriceability is itself the finding — a price architecture built so it cannot be compared across the border."},
+
+ {"id":"W-001","open":false,"market":"VN","title":"Zojirushi rice cooker — Vietnam price",
+  "need":"A Vietnamese price for a Zojirushi rice cooker, with the model number.",
+  "done":"Answered.",
+  "tried":"Official Vietnamese distributor channel.",
+  "answer":{"price":"5,690,000","currency":"VND","how":"browser","where":"zojirushi.com.vn (official distributor)","url":"https://zojirushi.com.vn/","date":"2026-09-01",
+   "note":"List price; currently discounted to 5,099,000 ₫. Model NL-AAQ18-CA, 1.8L. Entered as 5099 — the page reads 5.099.000 ₫, since Vietnamese sites use “.” as the thousands separator. Recorded, but it does not produce a matched pair: NL-AAQ18 returns no results on zojirushi.co.jp, so the Vietnamese line-up is export-only. That is what W-003 is for."}},
+
+ {"id":"W-002","open":false,"market":"TH","title":"MUJI Thailand — Ultrasonic Aroma Diffuser MJ-UAD1",
+  "need":"The Thai retail price of the MUJI ultrasonic aroma diffuser.",
+  "done":"Answered and resolved.",
+  "tried":"The official Thai retail site is behind a bot challenge that no header combination passes.",
+  "answer":{"price":"2,890","currency":"THB","how":"browser","where":"Shopee (third-party seller)","url":"","date":"2026-09-01",
+   "note":"Resolved as reseller pricing, not an official price. A Thai price aggregator indexes about thirty merchants carrying MUJI aroma diffusers, and none is a MUJI official store — anonymous reseller handles, TikTok Shop and Lazada sellers, several listings explicitly second-hand, prices spanning ฿79–3,490. Kept as evidence in its own right: the reseller layer sits roughly 16% above the ฿2,490 official list price."}}
+]
+</script>
+
+<script>
+(function(){
+"use strict";
+var KEY="vw-answers-v1";
+var items=JSON.parse(document.getElementById("items").textContent);
+var saved=load();
+
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){return {};}}
+function store(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function today(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+function toast(t){var e=document.getElementById("toast");e.textContent=t;e.classList.add("show");setTimeout(function(){e.classList.remove("show");},1600);}
+
+function ccyFor(m){return m==="VN"?"VND":m==="TH"?"THB":m==="SG"?"SGD":m==="ID"?"IDR":m==="MY"?"MYR":m==="PH"?"PHP":"";}
+
+function card(it){
+  var mine=saved[it.id];
+  var isDone=!it.open||!!mine;
+  var h='<div class="card'+(isDone?" done":"")+'"><div class="chead">'
+   +'<span class="wid">'+esc(it.id)+'</span>'
+   +'<span class="tag'+(isDone?" ok":"")+'">'+(mine?"YOUR ANSWER":(it.open?esc(it.market):"ANSWERED"))+'</span>'
+   +'<h2>'+esc(it.title)+'</h2></div>'
+   +'<p class="need">'+esc(it.need)+'</p>';
+
+  if(it.open) h+='<dl><dt>What closes it</dt><dd>'+esc(it.done)+'</dd></dl>';
+
+  h+='<details><summary>What was already tried'+(it.why?", and why it matters":"")+'</summary><dl>'
+   +'<dt>Already tried</dt><dd class="dim">'+esc(it.tried)+'</dd>'
+   +(it.why?'<dt>Why it matters</dt><dd class="dim">'+esc(it.why)+'</dd>':'')
+   +'</dl></details>';
+
+  var a=mine||it.answer;
+  if(a){
+    h+='<div class="ans"><b>'+esc(a.price)+' '+esc(a.currency)+'</b><div class="meta">'
+     +esc(a.how)+(a.where?" · "+esc(a.where):"")+" · "+esc(a.date)
+     +(a.url?"<br>"+esc(a.url):"")+(a.note?"<br>"+esc(a.note):"")+'</div></div>';
+    if(mine) h+='<div class="row" style="margin-top:11px"><button data-edit="'+esc(it.id)+'">Edit</button><button data-clear="'+esc(it.id)+'">Clear</button></div>';
+  }
+
+  if(it.open&&!mine) h+=form(it);
+  return h+'</div>';
+}
+
+function form(it){
+  return '<div class="form" id="f-'+esc(it.id)+'">'
+   +'<div class="two">'
+   +'<label>Price<input class="num" inputmode="decimal" data-f="price" placeholder="5,690,000"></label>'
+   +'<label>Currency<input class="num" data-f="currency" value="'+esc(ccyFor(it.market))+'"></label>'
+   +'</div>'
+   +'<label>How did you get it?<select data-f="how">'
+   +'<option value="in-store">In store — saw the price tag</option>'
+   +'<option value="browser">Browser — found the page</option>'
+   +'<option value="phone">Phone — asked them</option>'
+   +'<option value="other">Other</option></select></label>'
+   +'<label>Where <span class="h">shop and city, or the site</span><input data-f="where" placeholder="Nguyen Kim, HCMC"></label>'
+   +'<label>Link <span class="h">optional</span><input data-f="url" inputmode="url" placeholder="https://"></label>'
+   +'<label>Model number and anything else <span class="h">the model number is the important one</span><textarea data-f="note" placeholder="NP-BE10, 100V Japan-domestic, grey import"></textarea></label>'
+   +'<div class="row"><button class="p" data-save="'+esc(it.id)+'">Save</button></div>'
+   +'<p class="hint">Saved on this device only. Nothing is sent anywhere — use <b>Copy answers</b> and paste it to Claude.</p>'
+   +'</div>';
+}
+
+function render(){
+  var open=items.filter(function(i){return i.open;});
+  var done=items.filter(function(i){return !i.open;});
+  var h='<header><span class="eyebrow">Vectura · field list</span><h1>Vectura Wanted</h1>'
+   +'<p class="lede">Prices a script could not reach — bot walls, login gates, or facts the brand simply does not publish. A real browser or a shop floor gets them in seconds. Read this before a trip.</p></header>';
+  h+='<div class="sect">Open — '+open.length+'</div>';
+  open.forEach(function(i){h+=card(i);});
+  if(done.length){h+='<div class="sect">Answered</div>';done.forEach(function(i){h+=card(i);});}
+  h+='<footer>Answers stay in this browser on this device. The page is static — no account, no backend, nothing stored anywhere else.<br>Everything here is public retail information: brands, models, shelf prices.</footer>';
+  document.getElementById("app").innerHTML=h;
+  var n=Object.keys(saved).length;
+  document.getElementById("bn").innerHTML=n?("<b>"+n+"</b> answer"+(n>1?"s":"")+" on this device"):"Nothing answered yet";
+  wire();
+}
+
+function wire(){
+  each("[data-save]",function(b){b.onclick=function(){save(b.getAttribute("data-save"));};});
+  each("[data-clear]",function(b){b.onclick=function(){delete saved[b.getAttribute("data-clear")];store();render();toast("Cleared");};});
+  each("[data-edit]",function(b){b.onclick=function(){var id=b.getAttribute("data-edit");var v=saved[id];delete saved[id];store();render();var f=document.getElementById("f-"+id);if(f&&v){["price","currency","how","where","url","note"].forEach(function(k){var el=f.querySelector('[data-f="'+k+'"]');if(el&&v[k])el.value=v[k];});f.scrollIntoView({block:"center"});}};});
+}
+function each(sel,fn){Array.prototype.forEach.call(document.querySelectorAll(sel),fn);}
+
+function save(id){
+  var f=document.getElementById("f-"+id);
+  var g=function(n){var el=f.querySelector('[data-f="'+n+'"]');return el?el.value.trim():"";};
+  if(!g("price")){toast("Needs a price");return;}
+  if(!g("currency")){toast("Needs a currency");return;}
+  saved[id]={price:g("price"),currency:g("currency"),how:g("how"),where:g("where"),url:g("url"),note:g("note"),date:today()};
+  store();render();toast("Saved on this device");
+}
+
+function block(){
+  var out=["VECTURA WANTED — answers ("+today()+")",""];
+  Object.keys(saved).forEach(function(id){
+    var a=saved[id],it=items.filter(function(i){return i.id===id;})[0]||{};
+    out.push(id+" · "+(it.title||""));
+    out.push("  price: "+a.price+" "+a.currency);
+    out.push("  how:   "+a.how+(a.where?" — "+a.where:""));
+    if(a.url) out.push("  url:   "+a.url);
+    if(a.note) out.push("  note:  "+a.note);
+    out.push("  date:  "+a.date);
+    out.push("");
+  });
+  return out.join("\n");
+}
+
+document.getElementById("copyall").onclick=function(){
+  if(!Object.keys(saved).length){toast("Nothing to copy yet");return;}
+  var t=block();
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast("Copied — paste it to Claude");},fb);}else fb();
+  function fb(){
+    var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.focus();ta.select();
+    try{document.execCommand("copy");toast("Copied — paste it to Claude");}catch(e){
+      var pre=document.createElement("pre");pre.textContent=t;document.getElementById("app").appendChild(pre);
+      pre.scrollIntoView({block:"center"});toast("Select the text and copy");
+    }
+    document.body.removeChild(ta);
+  }
+};
+
+render();
+})();
+</script>
+</body>
+</html>
