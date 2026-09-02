@@ -7,24 +7,25 @@
 <title>Vectura Wanted</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-:root{--ground:#F8F8F5;--surface:#FFFFFF;--ink:#1D2126;--muted:#66707E;--line:#E1E3DE;--line-strong:#C9CCC5;--accent:#2C4E96;--accent-ink:#FFF;--accent-soft:#EDF1F9;--ok:#2E7D5B;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#131619;--surface:#1C2126;--ink:#E6E8EB;--muted:#98A2B0;--line:#2A3038;--line-strong:#3A414B;--accent:#82A4E8;--accent-ink:#10151F;--accent-soft:#232B3A;--ok:#5CB893}}
-:root[data-theme="dark"]{--ground:#131619;--surface:#1C2126;--ink:#E6E8EB;--muted:#98A2B0;--line:#2A3038;--line-strong:#3A414B;--accent:#82A4E8;--accent-ink:#10151F;--accent-soft:#232B3A;--ok:#5CB893}
+:root{--ground:#F8F8F5;--surface:#FFFFFF;--ink:#1D2126;--muted:#66707E;--line:#E1E3DE;--line-strong:#C9CCC5;--accent:#2C4E96;--accent-ink:#FFF;--accent-soft:#EDF1F9;--ok:#2E7D5B;--ok-soft:#E7F3ED;--warn:#B7791F;--err:#B3402E;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#131619;--surface:#1C2126;--ink:#E6E8EB;--muted:#98A2B0;--line:#2A3038;--line-strong:#3A414B;--accent:#82A4E8;--accent-ink:#10151F;--accent-soft:#232B3A;--ok:#5CB893;--ok-soft:#1B2C25;--warn:#D9A24A;--err:#D97862}}
+:root[data-theme="dark"]{--ground:#131619;--surface:#1C2126;--ink:#E6E8EB;--muted:#98A2B0;--line:#2A3038;--line-strong:#3A414B;--accent:#82A4E8;--accent-ink:#10151F;--accent-soft:#232B3A;--ok:#5CB893;--ok-soft:#1B2C25;--warn:#D9A24A;--err:#D97862}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:640px;margin:0 auto;padding:26px 18px 90px}
-header{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:18px}
+.wrap{max-width:640px;margin:0 auto;padding:26px 18px 92px}
+header{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:16px}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500}
 h1{font-size:24px;font-weight:700;letter-spacing:-.01em;margin:6px 0 8px;text-wrap:balance}
 .lede{color:var(--muted);font-size:13.5px;margin:0;max-width:58ch}
-.sect{font-family:var(--mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:26px 0 11px}
+.sect{font-family:var(--mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:24px 0 11px}
 .card{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:16px;margin-bottom:14px}
 .card.done{border-color:var(--ok)}
 .chead{display:flex;align-items:baseline;gap:9px;margin-bottom:9px;flex-wrap:wrap}
 .wid{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.04em}
 .tag{font-family:var(--mono);font-size:10.5px;font-weight:600;background:var(--accent-soft);color:var(--accent);padding:2px 7px;border-radius:99px;letter-spacing:.08em}
 .tag.ok{background:var(--ok);color:var(--surface)}
+.tag.pend{background:var(--warn);color:var(--surface)}
 h2{font-size:16.5px;font-weight:700;margin:0;line-height:1.35;flex-basis:100%}
 .need{font-size:14.5px;margin:10px 0 12px}
 dl{margin:0;font-size:13px}
@@ -45,26 +46,41 @@ input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid v
 button{font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;border-radius:5px;padding:11px 16px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink)}
 button.p{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 button:hover{border-color:var(--accent)}
+button:disabled{opacity:.55;cursor:default}
 .row{display:flex;gap:9px;flex-wrap:wrap}
 .ans{background:var(--accent-soft);border-radius:5px;padding:12px 13px;margin-top:12px;font-size:13.5px}
 .ans b{font-family:var(--mono);font-size:16px}
 .ans .meta{color:var(--muted);font-size:12px;margin-top:4px;line-height:1.5}
+.sent{margin-top:10px;font-size:12.5px;font-family:var(--mono);color:var(--ok);background:var(--ok-soft);border-radius:5px;padding:8px 11px}
+.sent a{color:inherit}
 .hint{font-size:12px;color:var(--muted);margin-top:9px}
+.gh{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:14px 16px;margin-bottom:18px}
+.gh .st{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600}
+.dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;background:var(--muted)}
+.dot.on{background:var(--ok)}
+.gh .body{margin-top:11px;display:grid;gap:10px}
+.gh p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.6}
+.gh ol{margin:0;padding-left:20px;font-size:12.5px;color:var(--muted);line-height:1.75}
+.gh code{font-family:var(--mono);font-size:11.5px;background:var(--ground);padding:1px 5px;border-radius:3px;color:var(--ink)}
 pre{font-family:var(--mono);font-size:11.5px;white-space:pre-wrap;word-break:break-word;background:var(--ground);border:1px solid var(--line);border-radius:5px;padding:11px;margin:11px 0 0;user-select:all;overflow-x:auto}
 footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);font-family:var(--mono);line-height:1.75}
 .bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:2px solid var(--ink);padding:10px 18px}
 .bar .in{max-width:640px;margin:0 auto;display:flex;gap:11px;align-items:center}
-.bar .n{font-family:var(--mono);font-size:12.5px;flex:1;color:var(--muted)}
+.bar .n{font-family:var(--mono);font-size:12.5px;flex:1;color:var(--muted);min-width:0}
 .bar .n b{color:var(--ink)}
-.toast{position:fixed;bottom:74px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--ground);font-size:13px;font-weight:600;padding:9px 20px;border-radius:99px;opacity:0;transition:opacity .18s;pointer-events:none;z-index:9}
+.toast{position:fixed;bottom:74px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--ground);font-size:13px;font-weight:600;padding:9px 20px;border-radius:99px;opacity:0;transition:opacity .18s;pointer-events:none;z-index:9;max-width:88vw;text-align:center}
 .toast.show{opacity:1}
 @media (prefers-reduced-motion:reduce){.toast{transition:none}}
 </style>
 </head>
 <body>
-<div class="wrap" id="app"></div>
-<div class="bar"><div class="in"><span class="n" id="bn"></span><button class="p" id="copyall">Copy answers</button></div></div>
+<div class="wrap"><div id="ghbox"></div><div id="app"></div></div>
+<div class="bar"><div class="in"><span class="n" id="bn"></span><button id="copyall">Copy</button><button class="p" id="sendall">Send</button></div></div>
 <div class="toast" id="toast"></div>
+
+<script id="cfg" type="application/json">
+{"owner":"sideri-dev","repo":"vectura-research","label":"wanted-answer"}
+</script>
 
 <script id="items" type="application/json">
 [
@@ -93,52 +109,113 @@ footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-si
 <script>
 (function(){
 "use strict";
-var KEY="vw-answers-v1";
+var CFG=JSON.parse(document.getElementById("cfg").textContent);
+var KEY="vw-answers-v1", TKEY="vw-gh-token";
 var items=JSON.parse(document.getElementById("items").textContent);
-var saved=load();
+var saved=load(KEY,{}), token=loadTok(), ghOpen=false;
 
-function load(){try{return JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(e){return {};}}
+function load(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch(e){return d;}}
 function store(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
+function loadTok(){try{return localStorage.getItem(TKEY)||"";}catch(e){return "";}}
+function saveTok(t){try{t?localStorage.setItem(TKEY,t):localStorage.removeItem(TKEY);}catch(e){}token=t;}
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function today(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
-function toast(t){var e=document.getElementById("toast");e.textContent=t;e.classList.add("show");setTimeout(function(){e.classList.remove("show");},1600);}
+function toast(t){var e=document.getElementById("toast");e.textContent=t;e.classList.add("show");setTimeout(function(){e.classList.remove("show");},2200);}
+function ccyFor(m){return {VN:"VND",TH:"THB",SG:"SGD",ID:"IDR",MY:"MYR",PH:"PHP"}[m]||"";}
+function unsent(){return Object.keys(saved).filter(function(k){return !saved[k].issue;});}
 
-function ccyFor(m){return m==="VN"?"VND":m==="TH"?"THB":m==="SG"?"SGD":m==="ID"?"IDR":m==="MY"?"MYR":m==="PH"?"PHP":"";}
+/* ---------- GitHub ---------- */
+function gh(path,opts){
+  opts=opts||{};
+  return fetch("https://api.github.com/repos/"+CFG.owner+"/"+CFG.repo+path,{
+    method:opts.method||"GET",
+    headers:{"Authorization":"Bearer "+token,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28",
+             "Content-Type":"application/json"},
+    body:opts.body?JSON.stringify(opts.body):undefined
+  }).then(function(r){
+    return r.json().catch(function(){return {};}).then(function(j){
+      if(!r.ok){var e=new Error(j.message||("HTTP "+r.status));e.status=r.status;throw e;}
+      return j;
+    });
+  });
+}
+function why(err){
+  if(err.status===401) return "Token rejected — it may be wrong or expired.";
+  if(err.status===403) return "Token lacks permission, or rate-limited.";
+  if(err.status===404) return "No access to the repository with this token.";
+  if(err.status===422) return "GitHub refused the issue (label missing?).";
+  return err.message||"Network error.";
+}
+function bodyFor(id,a){
+  var it=items.filter(function(i){return i.id===id;})[0]||{};
+  return ["**"+id+" — "+(it.title||"")+"**","",
+    "| field | value |","|---|---|",
+    "| price | `"+a.price+" "+a.currency+"` |",
+    "| how | "+a.how+" |",
+    "| where | "+(a.where||"—")+" |",
+    "| url | "+(a.url||"—")+" |",
+    "| note | "+(a.note||"—")+" |",
+    "| date | "+a.date+" |","",
+    "_Filed from the field list at vectura-wanted.sideri.io. Ingested and closed by `/reanchor`._"].join("\n");
+}
+function send(id){
+  var a=saved[id]; if(!a||a.issue) return Promise.resolve();
+  return gh("/issues",{method:"POST",body:{
+    title:"WANTED answer: "+id+" — "+a.price+" "+a.currency,
+    body:bodyFor(id,a), labels:[CFG.label]
+  }}).then(function(j){ a.issue=j.number; a.issueUrl=j.html_url; store(); });
+}
+
+/* ---------- render ---------- */
+function ghBox(){
+  var on=!!token;
+  var h='<div class="gh"><div class="st"><span class="dot'+(on?" on":"")+'"></span>'
+   +(on?"Connected to GitHub — answers file automatically":"Not connected — answers stay on this device")
+   +'</div>';
+  if(on){
+    h+='<div class="row" style="margin-top:11px"><button id="ghtest">Test</button><button id="ghout">Disconnect</button></div>';
+  }else{
+    h+='<div class="body"><p>Connect once and every answer files itself as a GitHub issue. The token is stored only in this browser — it is never part of this page and never leaves your device except to call GitHub.</p>'
+     +'<details><summary>Make a token — 1 minute</summary><ol>'
+     +'<li>Open <b>github.com → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new</b></li>'
+     +'<li>Resource owner <code>'+esc(CFG.owner)+'</code>, repository access <b>Only select repositories</b> → <code>'+esc(CFG.repo)+'</code></li>'
+     +'<li>Permissions → Repository permissions → <b>Issues: Read and write</b>. Nothing else — not Contents.</li>'
+     +'<li>Generate, copy, paste below.</li></ol>'
+     +'<p>That scope can only file issues in that one repository. It cannot read code or change files.</p></details>'
+     +'<label>Token<input type="password" id="ghtok" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…"></label>'
+     +'<div class="row"><button class="p" id="ghsave">Connect</button></div></div>';
+  }
+  return h+'</div>';
+}
 
 function card(it){
-  var mine=saved[it.id];
-  var isDone=!it.open||!!mine;
+  var mine=saved[it.id], isDone=!it.open||!!mine;
+  var tag=mine?(mine.issue?"FILED #"+mine.issue:"ON THIS DEVICE"):(it.open?it.market:"ANSWERED");
+  var cls=mine?(mine.issue?"tag ok":"tag pend"):"tag";
   var h='<div class="card'+(isDone?" done":"")+'"><div class="chead">'
-   +'<span class="wid">'+esc(it.id)+'</span>'
-   +'<span class="tag'+(isDone?" ok":"")+'">'+(mine?"YOUR ANSWER":(it.open?esc(it.market):"ANSWERED"))+'</span>'
-   +'<h2>'+esc(it.title)+'</h2></div>'
-   +'<p class="need">'+esc(it.need)+'</p>';
-
+   +'<span class="wid">'+esc(it.id)+'</span><span class="'+cls+'">'+esc(tag)+'</span>'
+   +'<h2>'+esc(it.title)+'</h2></div><p class="need">'+esc(it.need)+'</p>';
   if(it.open) h+='<dl><dt>What closes it</dt><dd>'+esc(it.done)+'</dd></dl>';
-
   h+='<details><summary>What was already tried'+(it.why?", and why it matters":"")+'</summary><dl>'
    +'<dt>Already tried</dt><dd class="dim">'+esc(it.tried)+'</dd>'
-   +(it.why?'<dt>Why it matters</dt><dd class="dim">'+esc(it.why)+'</dd>':'')
-   +'</dl></details>';
-
+   +(it.why?'<dt>Why it matters</dt><dd class="dim">'+esc(it.why)+'</dd>':'')+'</dl></details>';
   var a=mine||it.answer;
   if(a){
     h+='<div class="ans"><b>'+esc(a.price)+' '+esc(a.currency)+'</b><div class="meta">'
      +esc(a.how)+(a.where?" · "+esc(a.where):"")+" · "+esc(a.date)
      +(a.url?"<br>"+esc(a.url):"")+(a.note?"<br>"+esc(a.note):"")+'</div></div>';
-    if(mine) h+='<div class="row" style="margin-top:11px"><button data-edit="'+esc(it.id)+'">Edit</button><button data-clear="'+esc(it.id)+'">Clear</button></div>';
+    if(mine&&mine.issue) h+='<div class="sent">Filed as issue #'+esc(mine.issue)+' — <a href="'+esc(mine.issueUrl)+'" target="_blank" rel="noopener">open</a></div>';
+    if(mine&&!mine.issue) h+='<div class="row" style="margin-top:11px"><button class="p" data-send="'+esc(it.id)+'">'+(token?"File to GitHub":"Connect GitHub to file")+'</button></div>';
+    if(mine) h+='<div class="row" style="margin-top:9px"><button data-edit="'+esc(it.id)+'">Edit</button><button data-clear="'+esc(it.id)+'">Clear</button></div>';
   }
-
   if(it.open&&!mine) h+=form(it);
   return h+'</div>';
 }
 
 function form(it){
-  return '<div class="form" id="f-'+esc(it.id)+'">'
-   +'<div class="two">'
-   +'<label>Price<input class="num" inputmode="decimal" data-f="price" placeholder="5,690,000"></label>'
-   +'<label>Currency<input class="num" data-f="currency" value="'+esc(ccyFor(it.market))+'"></label>'
-   +'</div>'
+  return '<div class="form" id="f-'+esc(it.id)+'"><div class="two">'
+   +'<label>Price<input class="num" inputmode="decimal" data-f="price" placeholder="12,900,000"></label>'
+   +'<label>Currency<input class="num" data-f="currency" value="'+esc(ccyFor(it.market))+'"></label></div>'
    +'<label>How did you get it?<select data-f="how">'
    +'<option value="in-store">In store — saw the price tag</option>'
    +'<option value="browser">Browser — found the page</option>'
@@ -147,43 +224,64 @@ function form(it){
    +'<label>Where <span class="h">shop and city, or the site</span><input data-f="where" placeholder="Nguyen Kim, HCMC"></label>'
    +'<label>Link <span class="h">optional</span><input data-f="url" inputmode="url" placeholder="https://"></label>'
    +'<label>Model number and anything else <span class="h">the model number is the important one</span><textarea data-f="note" placeholder="NP-BE10, 100V Japan-domestic, grey import"></textarea></label>'
-   +'<div class="row"><button class="p" data-save="'+esc(it.id)+'">Save</button></div>'
-   +'<p class="hint">Saved on this device only. Nothing is sent anywhere — use <b>Copy answers</b> and paste it to Claude.</p>'
-   +'</div>';
+   +'<div class="row"><button class="p" data-save="'+esc(it.id)+'">'+(token?"Save and file":"Save")+'</button></div>'
+   +'<p class="hint">'+(token?"Files itself to GitHub the moment you save.":"Saved on this device. Connect GitHub above to file it automatically, or use Copy.")+'</p></div>';
 }
 
 function render(){
-  var open=items.filter(function(i){return i.open;});
-  var done=items.filter(function(i){return !i.open;});
+  document.getElementById("ghbox").innerHTML=ghBox();
+  var open=items.filter(function(i){return i.open;}), done=items.filter(function(i){return !i.open;});
   var h='<header><span class="eyebrow">Vectura · field list</span><h1>Vectura Wanted</h1>'
-   +'<p class="lede">Prices a script could not reach — bot walls, login gates, or facts the brand simply does not publish. A real browser or a shop floor gets them in seconds. Read this before a trip.</p></header>';
-  h+='<div class="sect">Open — '+open.length+'</div>';
+   +'<p class="lede">Prices a script could not reach — bot walls, login gates, or facts the brand simply does not publish. A real browser or a shop floor gets them in seconds. Read this before a trip.</p></header>'
+   +'<div class="sect">Open — '+open.length+'</div>';
   open.forEach(function(i){h+=card(i);});
   if(done.length){h+='<div class="sect">Answered</div>';done.forEach(function(i){h+=card(i);});}
-  h+='<footer>Answers stay in this browser on this device. The page is static — no account, no backend, nothing stored anywhere else.<br>Everything here is public retail information: brands, models, shelf prices.</footer>';
+  h+='<footer>Answers are kept in this browser and filed to GitHub as issues when connected. The page is static — no backend, no account, nothing stored server-side.<br>Everything here is public retail information: brands, models, shelf prices.</footer>';
   document.getElementById("app").innerHTML=h;
-  var n=Object.keys(saved).length;
-  document.getElementById("bn").innerHTML=n?("<b>"+n+"</b> answer"+(n>1?"s":"")+" on this device"):"Nothing answered yet";
+  var n=Object.keys(saved).length, u=unsent().length;
+  document.getElementById("bn").innerHTML=n?("<b>"+n+"</b> answered"+(u?" · <b>"+u+"</b> not filed":" · all filed")):"Nothing answered yet";
+  document.getElementById("sendall").disabled=!token||!u;
   wire();
 }
+function each(s,f){Array.prototype.forEach.call(document.querySelectorAll(s),f);}
 
 function wire(){
-  each("[data-save]",function(b){b.onclick=function(){save(b.getAttribute("data-save"));};});
+  each("[data-save]",function(b){b.onclick=function(){doSave(b.getAttribute("data-save"),b);};});
+  each("[data-send]",function(b){b.onclick=function(){
+    if(!token){ghOpen=true;toast("Connect GitHub first");window.scrollTo({top:0,behavior:"smooth"});return;}
+    b.disabled=true;b.textContent="Filing…";
+    send(b.getAttribute("data-send")).then(function(){render();toast("Filed to GitHub");},
+      function(e){render();toast(why(e));});};});
   each("[data-clear]",function(b){b.onclick=function(){delete saved[b.getAttribute("data-clear")];store();render();toast("Cleared");};});
-  each("[data-edit]",function(b){b.onclick=function(){var id=b.getAttribute("data-edit");var v=saved[id];delete saved[id];store();render();var f=document.getElementById("f-"+id);if(f&&v){["price","currency","how","where","url","note"].forEach(function(k){var el=f.querySelector('[data-f="'+k+'"]');if(el&&v[k])el.value=v[k];});f.scrollIntoView({block:"center"});}};});
+  each("[data-edit]",function(b){b.onclick=function(){var id=b.getAttribute("data-edit"),v=saved[id];delete saved[id];store();render();
+    var f=document.getElementById("f-"+id);if(f&&v){["price","currency","how","where","url","note"].forEach(function(k){var el=f.querySelector('[data-f="'+k+'"]');if(el&&v[k])el.value=v[k];});f.scrollIntoView({block:"center"});}};});
+  var s=document.getElementById("ghsave");
+  if(s) s.onclick=function(){
+    var t=(document.getElementById("ghtok").value||"").trim();
+    if(!t){toast("Paste a token first");return;}
+    s.disabled=true;s.textContent="Checking…";saveTok(t);
+    gh("").then(function(){render();toast("Connected");},function(e){saveTok("");render();toast(why(e));});
+  };
+  var o=document.getElementById("ghout"); if(o) o.onclick=function(){saveTok("");render();toast("Disconnected");};
+  var tst=document.getElementById("ghtest");
+  if(tst) tst.onclick=function(){tst.disabled=true;tst.textContent="Checking…";
+    gh("").then(function(){render();toast("Token works");},function(e){render();toast(why(e));});};
 }
-function each(sel,fn){Array.prototype.forEach.call(document.querySelectorAll(sel),fn);}
 
-function save(id){
+function doSave(id,btn){
   var f=document.getElementById("f-"+id);
   var g=function(n){var el=f.querySelector('[data-f="'+n+'"]');return el?el.value.trim():"";};
   if(!g("price")){toast("Needs a price");return;}
   if(!g("currency")){toast("Needs a currency");return;}
   saved[id]={price:g("price"),currency:g("currency"),how:g("how"),where:g("where"),url:g("url"),note:g("note"),date:today()};
-  store();render();toast("Saved on this device");
+  store();
+  if(!token){render();toast("Saved on this device — connect GitHub to file it");return;}
+  btn.disabled=true;btn.textContent="Filing…";
+  send(id).then(function(){render();toast("Saved and filed to GitHub");},
+    function(e){render();toast("Saved here, but not filed: "+why(e));});
 }
 
-function block(){
+function blockText(){
   var out=["VECTURA WANTED — answers ("+today()+")",""];
   Object.keys(saved).forEach(function(id){
     var a=saved[id],it=items.filter(function(i){return i.id===id;})[0]||{};
@@ -192,25 +290,27 @@ function block(){
     out.push("  how:   "+a.how+(a.where?" — "+a.where:""));
     if(a.url) out.push("  url:   "+a.url);
     if(a.note) out.push("  note:  "+a.note);
-    out.push("  date:  "+a.date);
+    out.push("  date:  "+a.date+(a.issue?"  (issue #"+a.issue+")":""));
     out.push("");
   });
   return out.join("\n");
 }
-
 document.getElementById("copyall").onclick=function(){
   if(!Object.keys(saved).length){toast("Nothing to copy yet");return;}
-  var t=block();
+  var t=blockText();
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast("Copied — paste it to Claude");},fb);}else fb();
-  function fb(){
-    var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";
+  function fb(){var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";
     document.body.appendChild(ta);ta.focus();ta.select();
     try{document.execCommand("copy");toast("Copied — paste it to Claude");}catch(e){
-      var pre=document.createElement("pre");pre.textContent=t;document.getElementById("app").appendChild(pre);
-      pre.scrollIntoView({block:"center"});toast("Select the text and copy");
-    }
-    document.body.removeChild(ta);
-  }
+      var pre=document.createElement("pre");pre.textContent=t;document.getElementById("app").appendChild(pre);pre.scrollIntoView({block:"center"});toast("Select the text and copy");}
+    document.body.removeChild(ta);}
+};
+document.getElementById("sendall").onclick=function(){
+  var u=unsent(); if(!token||!u.length) return;
+  var btn=this; btn.disabled=true; btn.textContent="Filing…";
+  u.reduce(function(p,id){return p.then(function(){return send(id);});},Promise.resolve())
+   .then(function(){render();toast("Filed "+u.length+" to GitHub");},
+         function(e){render();toast(why(e));});
 };
 
 render();
