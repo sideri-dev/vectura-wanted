@@ -4,351 +4,269 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Vectura Wanted</title>
+<title>Vectura Desk</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
-:root{--ground:#F8F8F5;--surface:#FFFFFF;--ink:#1D2126;--muted:#66707E;--line:#E1E3DE;--line-strong:#C9CCC5;--accent:#2C4E96;--accent-ink:#FFF;--accent-soft:#EDF1F9;--ok:#2E7D5B;--ok-soft:#E7F3ED;--warn:#B7791F;--err:#B3402E;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#131619;--surface:#1C2126;--ink:#E6E8EB;--muted:#98A2B0;--line:#2A3038;--line-strong:#3A414B;--accent:#82A4E8;--accent-ink:#10151F;--accent-soft:#232B3A;--ok:#5CB893;--ok-soft:#1B2C25;--warn:#D9A24A;--err:#D97862}}
-:root[data-theme="dark"]{--ground:#131619;--surface:#1C2126;--ink:#E6E8EB;--muted:#98A2B0;--line:#2A3038;--line-strong:#3A414B;--accent:#82A4E8;--accent-ink:#10151F;--accent-soft:#232B3A;--ok:#5CB893;--ok-soft:#1B2C25;--warn:#D9A24A;--err:#D97862}
+:root{--ground:#F8F8F5;--surface:#FFFFFF;--ink:#1D2126;--muted:#66707E;--line:#E1E3DE;--line-strong:#C9CCC5;--accent:#2C4E96;--accent-ink:#FFF;--accent-soft:#EDF1F9;--ok:#2E7D5B;--ok-soft:#E7F3ED;--warn:#B7791F;--warn-soft:#FBF2E3;--err:#B3402E;--purple:#6B4FA8;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#131619;--surface:#1C2126;--ink:#E6E8EB;--muted:#98A2B0;--line:#2A3038;--line-strong:#3A414B;--accent:#82A4E8;--accent-ink:#10151F;--accent-soft:#232B3A;--ok:#5CB893;--ok-soft:#1B2C25;--warn:#D9A24A;--warn-soft:#2B2417;--err:#D97862;--purple:#A98BE0}}
+:root[data-theme="dark"]{--ground:#131619;--surface:#1C2126;--ink:#E6E8EB;--muted:#98A2B0;--line:#2A3038;--line-strong:#3A414B;--accent:#82A4E8;--accent-ink:#10151F;--accent-soft:#232B3A;--ok:#5CB893;--ok-soft:#1B2C25;--warn:#D9A24A;--warn-soft:#2B2417;--err:#D97862;--purple:#A98BE0}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:640px;margin:0 auto;padding:26px 18px 92px}
-header{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:16px}
+.wrap{max-width:660px;margin:0 auto;padding:26px 18px 96px}
+header{border-bottom:2px solid var(--ink);padding-bottom:15px;margin-bottom:16px}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500}
-h1{font-size:24px;font-weight:700;letter-spacing:-.01em;margin:6px 0 8px;text-wrap:balance}
-.lede{color:var(--muted);font-size:13.5px;margin:0;max-width:58ch}
-.sect{font-family:var(--mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:24px 0 11px}
-.card{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:16px;margin-bottom:14px}
-.card.done{border-color:var(--ok)}
-.chead{display:flex;align-items:baseline;gap:9px;margin-bottom:9px;flex-wrap:wrap}
-.wid{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.04em}
-.tag{font-family:var(--mono);font-size:10.5px;font-weight:600;background:var(--accent-soft);color:var(--accent);padding:2px 7px;border-radius:99px;letter-spacing:.08em}
-.tag.ok{background:var(--ok);color:var(--surface)}
-.tag.pend{background:var(--warn);color:var(--surface)}
-h2{font-size:16.5px;font-weight:700;margin:0;line-height:1.35;flex-basis:100%}
-.need{font-size:14.5px;margin:10px 0 12px}
-dl{margin:0;font-size:13px}
-dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:10px}
-dd{margin:3px 0 0}
-dd.dim{color:var(--muted)}
-details{margin-top:11px}
-summary{font-size:12.5px;color:var(--accent);cursor:pointer;font-weight:600}
-.form{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line-strong);display:grid;gap:11px}
-label{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:600}
-label .h{font-weight:400;color:var(--muted);font-size:11px}
-input,select,textarea{font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--ground);border:1px solid var(--line-strong);border-radius:5px;padding:10px;width:100%}
-input.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
-textarea{min-height:54px;resize:vertical;font-size:15px}
-input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
-.two{display:grid;gap:11px;grid-template-columns:1fr}
-@media(min-width:460px){.two{grid-template-columns:1.5fr 1fr}}
-button{font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;border-radius:5px;padding:11px 16px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink)}
+h1{font-size:25px;font-weight:700;letter-spacing:-.01em;margin:6px 0 9px}
+.lede{color:var(--muted);font-size:13.5px;margin:0;max-width:60ch}
+.counts{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.pill{font-family:var(--mono);font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;letter-spacing:.05em;background:var(--accent-soft);color:var(--accent)}
+.pill.z{background:var(--ground);color:var(--muted);border:1px solid var(--line)}
+.sect{margin:28px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--line-strong)}
+.sect h2{font-size:15px;font-weight:700;margin:0 0 3px}
+.sect p{margin:0;font-size:12.5px;color:var(--muted)}
+.card{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:15px;margin-bottom:13px}
+.card.act{border-left:3px solid var(--warn)}
+.card.writ{border-left:3px solid var(--purple)}
+.card.done{border-left:3px solid var(--ok)}
+.ch{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.cid{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent)}
+.tag{font-family:var(--mono);font-size:10px;font-weight:600;padding:2px 7px;border-radius:99px;letter-spacing:.07em;background:var(--accent-soft);color:var(--accent)}
+.tag.w{background:var(--warn);color:#fff}.tag.g{background:var(--ok);color:#fff}.tag.p{background:var(--purple);color:#fff}
+.ct{font-size:15.5px;font-weight:700;flex-basis:100%;line-height:1.35}
+.meta{font-size:12.5px;color:var(--muted);margin:6px 0 0;line-height:1.6}
+.q{font-size:14.5px;margin:8px 0 0}
+label{display:block;font-size:12px;font-weight:600;margin-top:11px}
+label .h{display:block;font-weight:400;color:var(--muted);font-size:11px;margin-top:2px}
+textarea,input,select{font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--ground);border:1px solid var(--line-strong);border-radius:5px;padding:10px;width:100%;margin-top:5px}
+textarea{min-height:96px;resize:vertical;font-size:15px;line-height:1.6}
+textarea.tall{min-height:150px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+button{font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;border-radius:5px;padding:10px 15px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink)}
 button.p{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-button:hover{border-color:var(--accent)}
-button:disabled{opacity:.55;cursor:default}
-.row{display:flex;gap:9px;flex-wrap:wrap}
-.ans{background:var(--accent-soft);border-radius:5px;padding:12px 13px;margin-top:12px;font-size:13.5px}
-.ans b{font-family:var(--mono);font-size:16px}
-.ans .meta{color:var(--muted);font-size:12px;margin-top:4px;line-height:1.5}
-.sent{margin-top:10px;font-size:12.5px;font-family:var(--mono);color:var(--ok);background:var(--ok-soft);border-radius:5px;padding:8px 11px}
-.sent a{color:inherit}
-.hint{font-size:12px;color:var(--muted);margin-top:9px}
-.gh{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:14px 16px;margin-bottom:18px}
+button.g{background:var(--ok);color:#fff;border-color:var(--ok)}
+button.d{color:var(--err);border-color:var(--line-strong)}
+button:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.filed{margin-top:11px;font-size:12.5px;font-family:var(--mono);color:var(--ok);background:var(--ok-soft);border-radius:5px;padding:8px 11px}
+.filed a{color:inherit}
+.gh{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:14px 16px;margin-bottom:16px}
 .gh .st{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600}
-.dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;background:var(--muted)}
-.dot.on{background:var(--ok)}
-.gh .body{margin-top:11px;display:grid;gap:10px}
-.gh p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.6}
-.gh ol{margin:0;padding-left:20px;font-size:12.5px;color:var(--muted);line-height:1.75}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}.dot.on{background:var(--ok)}
+.gh p,.gh ol{font-size:12.5px;color:var(--muted);line-height:1.7;margin:9px 0 0}
+.gh ol{padding-left:20px}
 .gh code{font-family:var(--mono);font-size:11.5px;background:var(--ground);padding:1px 5px;border-radius:3px;color:var(--ink)}
-pre{font-family:var(--mono);font-size:11.5px;white-space:pre-wrap;word-break:break-word;background:var(--ground);border:1px solid var(--line);border-radius:5px;padding:11px;margin:11px 0 0;user-select:all;overflow-x:auto}
-footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);font-family:var(--mono);line-height:1.75}
+details{margin-top:10px}summary{font-size:12.5px;color:var(--accent);cursor:pointer;font-weight:600}
+.pre{font-family:var(--mono);font-size:11.5px;white-space:pre-wrap;background:var(--ground);border:1px solid var(--line);border-radius:5px;padding:10px;margin-top:8px;line-height:1.6}
+.empty{padding:20px;text-align:center;color:var(--muted);font-size:13.5px;border:1px dashed var(--line-strong);border-radius:7px}
+footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);font-family:var(--mono);line-height:1.8}
 .bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:2px solid var(--ink);padding:10px 18px}
-.bar .in{max-width:640px;margin:0 auto;display:flex;gap:11px;align-items:center}
+.bar .in{max-width:660px;margin:0 auto;display:flex;gap:10px;align-items:center}
 .bar .n{font-family:var(--mono);font-size:12.5px;flex:1;color:var(--muted);min-width:0}
 .bar .n b{color:var(--ink)}
-.toast{position:fixed;bottom:74px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--ground);font-size:13px;font-weight:600;padding:9px 20px;border-radius:99px;opacity:0;transition:opacity .18s;pointer-events:none;z-index:9;max-width:88vw;text-align:center}
+.toast{position:fixed;bottom:72px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--ground);font-size:13px;font-weight:600;padding:9px 20px;border-radius:99px;opacity:0;transition:opacity .18s;pointer-events:none;z-index:9;max-width:88vw;text-align:center}
 .toast.show{opacity:1}
 @media (prefers-reduced-motion:reduce){.toast{transition:none}}
 </style>
 </head>
 <body>
 <div class="wrap"><div id="ghbox"></div><div id="app"></div></div>
-<div class="bar"><div class="in"><span class="n" id="bn"></span><button id="copyall">Copy</button><button class="p" id="sendall">Send</button></div></div>
+<div class="bar"><div class="in"><span class="n" id="bn"></span><button class="p" id="sendall">File all</button></div></div>
 <div class="toast" id="toast"></div>
 
-<script id="cfg" type="application/json">
-{"owner":"sideri-dev","repo":"vectura-research","label":"wanted-answer"}
-</script>
-
-<script id="items" type="application/json">
-[
- {
-  "id": "W-003",
-  "open": false,
-  "market": "VN",
-  "title": "Zojirushi — a Japan-side price, or any 100V grey-import listing",
-  "need": "A Vietnamese price for a Japan-domestic rice-cooker model, with the model number.",
-  "done": "Answered.",
-  "tried": "The official line-ups are disjoint by construction, so no official channel could produce a matched pair. The grey channel did.",
-  "why": "If the grey channel really is the only route to a same-model comparison, that unpriceability is itself the finding — a price architecture built so it cannot be compared across the border.",
-  "answer": {
-   "price": "5,000,000",
-   "currency": "VND",
-   "how": "browser",
-   "where": "hiephongjapan.vn (parallel importer)",
-   "url": "https://hiephongjapan.vn/noi-com-zojirushi",
-   "date": "2026-09-02",
-   "note": "Zojirushi NW-VC18, 1.8L IH, listed as 「Hàng nội địa Nhật Bản」 (Japan-domestic goods); dealer reference price 7,050,000 ₫. Japan side ¥24,500 (kakaku.com, matching amazon.co.jp) → index 1.25. The first model in this project priced on both sides of the border — and it only exists because the grey channel imports the actual Japanese unit."
-  }
- },
- {
-  "id": "W-001",
-  "open": false,
-  "market": "VN",
-  "title": "Zojirushi rice cooker — Vietnam price",
-  "need": "A Vietnamese price for a Zojirushi rice cooker, with the model number.",
-  "done": "Answered.",
-  "tried": "Official Vietnamese distributor channel.",
-  "answer": {
-   "price": "5,690,000",
-   "currency": "VND",
-   "how": "browser",
-   "where": "zojirushi.com.vn (official distributor)",
-   "url": "https://zojirushi.com.vn/",
-   "date": "2026-09-01",
-   "note": "List price; currently discounted to 5,099,000 ₫. Model NL-AAQ18-CA, 1.8L. Entered as 5099 — the page reads 5.099.000 ₫, since Vietnamese sites use “.” as the thousands separator. Recorded, but it does not produce a matched pair: NL-AAQ18 returns no results on zojirushi.co.jp, so the Vietnamese line-up is export-only. That is what W-003 is for."
-  }
- },
- {
-  "id": "W-002",
-  "open": false,
-  "market": "TH",
-  "title": "MUJI Thailand — Ultrasonic Aroma Diffuser MJ-UAD1",
-  "need": "The Thai retail price of the MUJI ultrasonic aroma diffuser.",
-  "done": "Answered and resolved.",
-  "tried": "The official Thai retail site is behind a bot challenge that no header combination passes.",
-  "answer": {
-   "price": "2,890",
-   "currency": "THB",
-   "how": "browser",
-   "where": "Shopee (third-party seller)",
-   "url": "",
-   "date": "2026-09-01",
-   "note": "Resolved as reseller pricing, not an official price. A Thai price aggregator indexes about thirty merchants carrying MUJI aroma diffusers, and none is a MUJI official store — anonymous reseller handles, TikTok Shop and Lazada sellers, several listings explicitly second-hand, prices spanning ฿79–3,490. Kept as evidence in its own right: the reseller layer sits roughly 16% above the ฿2,490 official list price."
-  }
- }
-]
-</script>
+<script id="cfg" type="application/json">{"owner":"sideri-dev","repo":"vectura-research"}</script>
+<script id="state" type="application/json">{"generated": "2026-09-02", "ledger": {"rows": 9, "directions": {"supports": 2, "breaks": 5, "mixed": 2}}, "gate": [{"id": "2026-08-31-08", "subject": "KINTO → SG", "mechanism": "P1", "direction": "supports", "verification": "medium — re-anchored 2026-08-31: SGD 53.00 confirmed at a sound channel; old source retired"}, {"id": "2026-08-31-09", "subject": "Maisen → TH", "mechanism": "P1", "direction": "supports", "verification": "medium — re-anchored 2026-08-31: JP ¥980→¥999, official source, format mismatch resolved; index 1.77"}], "mechanisms": [{"id": "P1", "title": "Price Architecture", "claim": "Position does not travel or fail because of *how far* the destination price diverges from Japan. It fails when **no one in the destination market holds pricing authority** — when the shelf price is an output of the export and distribution stack rather than a decision someone made about the position the brand should occupy locally.", "cases": 11, "confidence": "**Moderate on the revised claim. Low on the original — the evidence contradicts it.**\n\nNine rows across four markets. Divergence magnitude predicts nothing: Royce' holds at **2.85×** and has *raised* price 35% in three years; UNIQLO holds at **1.52×** and **1.19×** while expanding; Mo-Mo-Paradise holds at **0.64×**; Marugame holds at **0.93×**. Five of nine rows break the original claim outright.\n\nWhat separates them is not the number. Every held case has an identifiable party in-market with the authority to set price and the will to use it — Noble Restaurant refusing the suki price war on the record, Fast Retailing's JV owning its own channel, PT Wilson Indotama raising a distributor price, Sriboga's manufacturing-depth JV. Every eroded case has the opposite: **Snow Peak's Thai price is set by a multi-brand dealer it does not operate; Zojirushi's official Vietnamese price is set by an export stack that charges 14% more for a lower-tier micom unit than the grey channel charges for the real IH one.**\n\nThat last row (**V-009**) is the strongest single piece of evidence in the corpus, because it shows the mechanism rather than a correlation — and it explains why the export line-up carries model codes that exist nowhere in Japan. Disjoint codes make the comparison unperformable. A price that cannot be checked is a price nobody had to justify.\n\n**What holds this back from high confidence:**\n- **A category confound I cannot yet rule out.** Both supports rows are durable goods sold through dealers; four of five breaks rows are F&B or apparel with operator control. Category and pricing authority are currently collinear in this sample.\n- **`local_comparison_set` is empty on eight of nine rows** — the reference-frame lane never ran. Every claim here is about the *Japan-relative* price, never about what that money buys locally, which is the half a buyer actually experiences.\n- **Two rows sit in a weaker evidentiary class**: V-009 is grey-channel and marketplace-priced on both sides; V-008's destination price is a third-party aggregator.\n- **Nothing here is P2, P3, P4 or P5.** This is a one-mechanism corpus arguing about a five-mechanism question.", "change": "1. **A brand with clear local pricing authority that priced deliberately and still lost position.** One well-evidenced case — a local operator or owned subsidiary that set its own price to a chosen position and was pushed out anyway — and the revised claim is wrong, not merely incomplete.\n2. **A brand with no local pricing authority whose position held for 5+ years anyway.** A pure export-stack price, dealer-set, sustained at a premium with stable or growing footprint, would show authority is not the deciding variable.\n3. **Category, not authority, doing the work.** If a durable-goods brand with real local pricing authority erodes, or an F&B brand without it holds, the confound above resolves against me and the mechanism is really about how a category is distributed, not about who sets the price.\n4. **A local comparison set that inverts the reading.** If the destination price turns out to be *at or below* the local premium set in the cases I have called eroded, then the buyer's reference frame — not the pricing structure — is carrying the outcome, and this belongs in P2.\n5. **Landed-cost evidence showing the stack leaves no discretion.** If P4 shows freight, duty and margin stacking mathematically force the observed price, then \"nobody exercised authority\" is the wrong description; the correct one is \"nobody had any,\" and the structural fix moves from governance to cost.", "hand": false, "unratified": true, "scaffold": false}, {"id": "P2", "title": "Reference Frame", "claim": "The destination buyer compares the price against what else that money buys *locally* — not against Tokyo — so a price that signals restraint at home signals something unchosen abroad.", "cases": 0, "confidence": "_Unassessed — no promoted cases._", "change": "_To be written by Rahut at the first gate that promotes a P2 row._", "hand": false, "unratified": false, "scaffold": true}, {"id": "P3", "title": "Distribution", "claim": "The entry mode — direct, distributor, franchise, JV, concession — imposes a margin stack and a control loss that quietly decides the price and the position before the brand makes any positioning decision at all.", "cases": 0, "confidence": "_Unassessed — no promoted cases._", "change": "_To be written by Rahut at the first gate that promotes a P3 row._", "hand": false, "unratified": false, "scaffold": true}, {"id": "P4", "title": "Cost Structure", "claim": "Freight, duty, and distributor margin stacking produce a landed cost that forces the destination price upward independent of any positioning intent — the premium is often an accident of the margin stack, not a strategy.", "cases": 0, "confidence": "_Unassessed._", "change": "_Rahut's hand only._", "hand": true, "unratified": false, "scaffold": true}, {"id": "P5", "title": "Aesthetic Legibility", "claim": "The restraint that reads as quality in Tokyo — plainness, quietness, absence of claim — can read as cold, cheap, or unfinished in a destination market whose premium codes are built on different signals.", "cases": 0, "confidence": "_Unassessed._", "change": "_Rahut's hand only._", "hand": true, "unratified": false, "scaffold": true}], "questions": [{"text": "2026-08-31 (seed run): Several seed cases show local operators *constructing* premium positions in-market (Ootoya TOKUSEN, Mo-Mo Gold tier, Uniqlo's 1.2–1.5× pricing). Should sweeps weight these position-construction cases equally with failure cases?"}], "backlog": [{"n": "15", "brand": "Ippudo 一風堂", "market": "SG", "why": "Contradictory signals: aggregators list ~8 outlets; brand's own SG digital presence dead/closed — resolve before asserting either way"}, {"n": "16", "brand": "Hachiban Ramen 8番らーめん", "market": "TH", "why": "30+ years as a Thai mass institution (100+ branches, ~฿83–93 bowls) — the inverse of premium drift, invisible in JP/EN coverage (A5 seed find)"}, {"n": "17", "brand": "Chateraise シャトレーゼ", "market": "ID", "why": "Gobel Group JV since 2017, building a second local factory (Bekasi) — manufacturing-depth entry mode, covered only in Indonesian press (A5 seed find)"}, {"n": "18", "brand": "Noble Restaurant portfolio (Nabezo Premium, 牛カツ京都勝牛, Guljak)", "market": "TH", "why": "The Mo-Mo franchisee importing/building further Japanese premium brands as a portfolio — operator-side P3 pattern (A5 seed find)"}, {"n": "19", "brand": "Marugame Udon 丸亀製麺", "market": "VN", "why": "LOTUS Group franchise since 2014-01; no store count verified past 2015 — completes the Marugame JV-vs-franchise contrast with ID"}, {"n": "20", "brand": "Sriboga Group's other Japan-brand ventures", "market": "ID", "why": "Test the \"one deep local partner\" pattern the seed run surfaced (Sriboga: Marugame + Pizza Hut)"}], "wanted": []}</script>
 
 <script>
 (function(){
 "use strict";
 var CFG=JSON.parse(document.getElementById("cfg").textContent);
-var KEY="vw-answers-v1", TKEY="vw-gh-token";
-var items=JSON.parse(document.getElementById("items").textContent);
-var saved=load(KEY,{}), token=loadTok(), ghOpen=false;
+var S=JSON.parse(document.getElementById("state").textContent);
+var DKEY="vd-drafts-v1", TKEY="vw-gh-token";
+var drafts=ld(DKEY,{}), token=tok(), busy=false;
 
-function load(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch(e){return d;}}
-function store(){try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}}
-function loadTok(){try{return localStorage.getItem(TKEY)||"";}catch(e){return "";}}
-function saveTok(t){try{t?localStorage.setItem(TKEY,t):localStorage.removeItem(TKEY);}catch(e){}token=t;}
+function ld(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch(e){return d;}}
+function sv(){try{localStorage.setItem(DKEY,JSON.stringify(drafts));}catch(e){}}
+function tok(){try{return localStorage.getItem(TKEY)||"";}catch(e){return "";}}
+function stok(t){try{t?localStorage.setItem(TKEY,t):localStorage.removeItem(TKEY);}catch(e){}token=t;}
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
-function today(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
-function toast(t){var e=document.getElementById("toast");e.textContent=t;e.classList.add("show");setTimeout(function(){e.classList.remove("show");},2200);}
-function ccyFor(m){return {VN:"VND",TH:"THB",SG:"SGD",ID:"IDR",MY:"MYR",PH:"PHP"}[m]||"";}
-function unsent(){return Object.keys(saved).filter(function(k){return !saved[k].issue;});}
+function toast(t){var e=document.getElementById("toast");e.textContent=t;e.classList.add("show");setTimeout(function(){e.classList.remove("show");},2400);}
+function pending(){return Object.keys(drafts).filter(function(k){return !drafts[k].issue;});}
 
-/* ---------- GitHub ---------- */
-function gh(path,opts){
-  opts=opts||{};
-  return fetch("https://api.github.com/repos/"+CFG.owner+"/"+CFG.repo+path,{
-    method:opts.method||"GET",
-    headers:{"Authorization":"Bearer "+token,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28",
-             "Content-Type":"application/json"},
-    body:opts.body?JSON.stringify(opts.body):undefined
-  }).then(function(r){
-    return r.json().catch(function(){return {};}).then(function(j){
-      if(!r.ok){var e=new Error(j.message||("HTTP "+r.status));e.status=r.status;throw e;}
-      return j;
-    });
-  });
-}
-function why(err){
-  if(err.status===401) return "Token rejected — it may be wrong or expired.";
-  if(err.status===403) return "Token lacks permission, or rate-limited.";
-  if(err.status===404) return "No access to the repository with this token.";
-  if(err.status===422) return "GitHub refused the issue (label missing?).";
-  return err.message||"Network error.";
-}
-function bodyFor(id,a){
-  var it=items.filter(function(i){return i.id===id;})[0]||{};
-  return ["**"+id+" — "+(it.title||"")+"**","",
-    "| field | value |","|---|---|",
-    "| price | `"+a.price+" "+a.currency+"` |",
-    "| how | "+a.how+" |",
-    "| where | "+(a.where||"—")+" |",
-    "| url | "+(a.url||"—")+" |",
-    "| note | "+(a.note||"—")+" |",
-    "| date | "+a.date+" |","",
-    "_Filed from the field list at vectura-wanted.sideri.io. Ingested and closed by `/reanchor`._"].join("\n");
-}
-function send(id){
-  var a=saved[id]; if(!a||a.issue) return Promise.resolve();
-  return gh("/issues",{method:"POST",body:{
-    title:"WANTED answer: "+id+" — "+a.price+" "+a.currency,
-    body:bodyFor(id,a), labels:[CFG.label]
-  }}).then(function(j){ a.issue=j.number; a.issueUrl=j.html_url; store(); });
+function gh(path,opts){opts=opts||{};
+  return fetch("https://api.github.com/repos/"+CFG.owner+"/"+CFG.repo+path,{method:opts.method||"GET",
+    headers:{"Authorization":"Bearer "+token,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28","Content-Type":"application/json"},
+    body:opts.body?JSON.stringify(opts.body):undefined})
+  .then(function(r){return r.json().catch(function(){return{};}).then(function(j){
+    if(!r.ok){var e=new Error(j.message||("HTTP "+r.status));e.status=r.status;throw e;} return j;});});}
+function why(e){return e.status===401?"Token rejected — wrong or expired.":e.status===403?"Token lacks permission, or rate-limited.":e.status===404?"No access to the repository.":e.status===422?"GitHub refused the issue.":(e.message||"Network error.");}
+
+function file(k){var d=drafts[k]; if(!d||d.issue) return Promise.resolve();
+  return gh("/issues",{method:"POST",body:{title:d.title,body:d.body,labels:[d.label]}})
+    .then(function(j){d.issue=j.number;d.url=j.html_url;sv();});}
+
+/* ---- builders ---- */
+function saveDraft(k,o){drafts[k]=o;sv();render();}
+
+function gateCard(g){
+  var k="gate:"+g.id, d=drafts[k];
+  var h='<div class="card '+(d?"done":"act")+'"><div class="ch"><span class="cid">'+esc(g.id)+'</span>'
+   +'<span class="tag w">DECIDE</span><span class="tag">'+esc(g.mechanism)+' · '+esc(g.direction)+'</span>'
+   +'<span class="ct">'+esc(g.subject)+'</span></div>'
+   +'<p class="meta">'+esc(g.verification)+'</p>';
+  if(d) h+='<div class="filed"><b>'+esc(d.mark)+'</b>'+(d.issue?' — filed as #'+d.issue+' <a href="'+esc(d.url)+'" target="_blank" rel="noopener">open</a>':' — not filed yet')+'</div>'
+        +'<div class="row"><button data-undo="'+esc(k)+'">Change</button></div>';
+  else h+='<label>Why, in a line <span class="h">optional — it becomes the record of your reasoning</span><textarea data-note="'+esc(k)+'" placeholder="Held because entry mode is unknown, which is the one field that would make it explain anything."></textarea></label>'
+        +'<div class="row"><button class="g" data-mark="'+esc(k)+'|PROMOTE">Promote</button>'
+        +'<button data-mark="'+esc(k)+'|HOLD">Hold</button>'
+        +'<button class="d" data-mark="'+esc(k)+'|KILL">Kill</button></div>';
+  return h+'</div>';
 }
 
-/* ---------- render ---------- */
-function ghBox(){
-  var on=!!token;
-  var h='<div class="gh"><div class="st"><span class="dot'+(on?" on":"")+'"></span>'
-   +(on?"Connected to GitHub — answers file automatically":"Not connected — answers stay on this device")
-   +'</div>';
-  if(on){
-    h+='<div class="row" style="margin-top:11px"><button id="ghtest">Test</button><button id="ghout">Disconnect</button></div>';
-  }else{
-    h+='<div class="body"><p>Connect once and every answer files itself as a GitHub issue. The token is stored only in this browser — it is never part of this page and never leaves your device except to call GitHub.</p>'
-     +'<details><summary>Make a token — 1 minute</summary><ol>'
-     +'<li>Open <b>github.com → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new</b></li>'
-     +'<li>Resource owner <code>'+esc(CFG.owner)+'</code>, repository access <b>Only select repositories</b> → <code>'+esc(CFG.repo)+'</code></li>'
-     +'<li>Permissions → Repository permissions → <b>Issues: Read and write</b>. Nothing else — not Contents.</li>'
-     +'<li>Generate, copy, paste below.</li></ol>'
-     +'<p>That scope can only file issues in that one repository. It cannot read code or change files.</p></details>'
-     +'<label>Token<input type="password" id="ghtok" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…"></label>'
-     +'<div class="row"><button class="p" id="ghsave">Connect</button></div></div>';
+function mechCard(m){
+  var k="mech:"+m.id, d=drafts[k];
+  var needs = m.unratified || m.scaffold;
+  var state = m.unratified?"RATIFY OR REWRITE":(m.scaffold?(m.hand?"YOUR HAND ONLY":"NOT WRITTEN"):"WRITTEN");
+  var h='<div class="card '+(d?"done":(needs?"writ":""))+'"><div class="ch"><span class="cid">'+esc(m.id)+'</span>'
+   +'<span class="tag '+(needs?"p":"g")+'">'+state+'</span>'
+   +'<span class="tag">'+m.cases+' case'+(m.cases===1?"":"s")+'</span>'
+   +'<span class="ct">'+esc(m.title)+'</span></div>';
+  if(m.claim) h+='<p class="meta"><b>Claim:</b> '+esc(m.claim.slice(0,320))+(m.claim.length>320?"…":"")+'</p>';
+  if(m.unratified) h+='<p class="meta" style="color:var(--purple)"><b>Drafted for you, not ratified.</b> Read it, then either ratify as written or replace it with your own words. Nothing publishes from this file until you do.</p>';
+  if(m.hand) h+='<p class="meta">This mechanism is yours alone — no agent researches or writes it.</p>';
+  if(d) h+='<div class="filed">Written'+(d.issue?' — filed as #'+d.issue+' <a href="'+esc(d.url)+'" target="_blank" rel="noopener">open</a>':' — not filed yet')+'</div>'
+        +'<div class="row"><button data-undo="'+esc(k)+'">Change</button></div>';
+  else{
+    h+='<details><summary>Current text</summary><div class="pre">'+esc((m.confidence||"—").slice(0,900))+'\n\n— WHAT WOULD CHANGE MY MIND —\n\n'+esc((m.change||"—").slice(0,900))+'</div></details>'
+     +'<label>Confidence — how much do you believe the claim now?<textarea class="tall" data-f="'+esc(k)+'|confidence" placeholder="Leave blank to keep what is there."></textarea></label>'
+     +'<label>What would change my mind<textarea class="tall" data-f="'+esc(k)+'|change" placeholder="Leave blank to keep what is there."></textarea></label>'
+     +'<label>Claim <span class="h">optional — only if you want to rewrite it</span><textarea data-f="'+esc(k)+'|claim"></textarea></label>'
+     +'<div class="row">'+(m.unratified?'<button class="g" data-ratify="'+esc(k)+'">Ratify as written</button>':'')
+     +'<button class="p" data-write="'+esc(k)+'">Save my text</button></div>';
   }
   return h+'</div>';
 }
 
-function card(it){
-  var mine=saved[it.id], isDone=!it.open||!!mine;
-  var tag=mine?(mine.issue?"FILED #"+mine.issue:"ON THIS DEVICE"):(it.open?it.market:"ANSWERED");
-  var cls=mine?(mine.issue?"tag ok":"tag pend"):"tag";
-  var h='<div class="card'+(isDone?" done":"")+'"><div class="chead">'
-   +'<span class="wid">'+esc(it.id)+'</span><span class="'+cls+'">'+esc(tag)+'</span>'
-   +'<h2>'+esc(it.title)+'</h2></div><p class="need">'+esc(it.need)+'</p>';
-  if(it.open) h+='<dl><dt>What closes it</dt><dd>'+esc(it.done)+'</dd></dl>';
-  h+='<details><summary>What was already tried'+(it.why?", and why it matters":"")+'</summary><dl>'
-   +'<dt>Already tried</dt><dd class="dim">'+esc(it.tried)+'</dd>'
-   +(it.why?'<dt>Why it matters</dt><dd class="dim">'+esc(it.why)+'</dd>':'')+'</dl></details>';
-  var a=mine||it.answer;
-  if(a){
-    h+='<div class="ans"><b>'+esc(a.price)+' '+esc(a.currency)+'</b><div class="meta">'
-     +esc(a.how)+(a.where?" · "+esc(a.where):"")+" · "+esc(a.date)
-     +(a.url?"<br>"+esc(a.url):"")+(a.note?"<br>"+esc(a.note):"")+'</div></div>';
-    if(mine&&mine.issue) h+='<div class="sent">Filed as issue #'+esc(mine.issue)+' — <a href="'+esc(mine.issueUrl)+'" target="_blank" rel="noopener">open</a></div>';
-    if(mine&&!mine.issue) h+='<div class="row" style="margin-top:11px"><button class="p" data-send="'+esc(it.id)+'">'+(token?"File to GitHub":"Connect GitHub to file")+'</button></div>';
-    if(mine) h+='<div class="row" style="margin-top:9px"><button data-edit="'+esc(it.id)+'">Edit</button><button data-clear="'+esc(it.id)+'">Clear</button></div>';
-  }
-  if(it.open&&!mine) h+=form(it);
+function simpleCard(kind,id,title,meta,label,ph){
+  var k=kind+":"+id, d=drafts[k];
+  var h='<div class="card '+(d?"done":"act")+'"><div class="ch"><span class="cid">'+esc(id)+'</span>'
+   +'<span class="tag '+(kind==="q"?"g":"w")+'">'+(kind==="q"?"ANSWER":"QUEUE")+'</span>'
+   +'<span class="ct">'+esc(title)+'</span></div>'
+   +(meta?'<p class="meta">'+esc(meta)+'</p>':'');
+  if(d) h+='<div class="filed">Answered'+(d.issue?' — filed as #'+d.issue+' <a href="'+esc(d.url)+'" target="_blank" rel="noopener">open</a>':' — not filed yet')+'</div>'
+        +'<div class="row"><button data-undo="'+esc(k)+'">Change</button></div>';
+  else h+='<label><textarea data-f="'+esc(k)+'|text" placeholder="'+esc(ph)+'"></textarea></label>'
+        +'<div class="row"><button class="p" data-simple="'+esc(k)+'|'+label+'|'+esc(title)+'">Save</button></div>';
   return h+'</div>';
-}
-
-function form(it){
-  return '<div class="form" id="f-'+esc(it.id)+'"><div class="two">'
-   +'<label>Price<input class="num" inputmode="decimal" data-f="price" placeholder="12,900,000"></label>'
-   +'<label>Currency<input class="num" data-f="currency" value="'+esc(ccyFor(it.market))+'"></label></div>'
-   +'<label>How did you get it?<select data-f="how">'
-   +'<option value="in-store">In store — saw the price tag</option>'
-   +'<option value="browser">Browser — found the page</option>'
-   +'<option value="phone">Phone — asked them</option>'
-   +'<option value="other">Other</option></select></label>'
-   +'<label>Where <span class="h">shop and city, or the site</span><input data-f="where" placeholder="Nguyen Kim, HCMC"></label>'
-   +'<label>Link <span class="h">optional</span><input data-f="url" inputmode="url" placeholder="https://"></label>'
-   +'<label>Model number and anything else <span class="h">the model number is the important one</span><textarea data-f="note" placeholder="NP-BE10, 100V Japan-domestic, grey import"></textarea></label>'
-   +'<div class="row"><button class="p" data-save="'+esc(it.id)+'">'+(token?"Save and file":"Save")+'</button></div>'
-   +'<p class="hint">'+(token?"Files itself to GitHub the moment you save.":"Saved on this device. Connect GitHub above to file it automatically, or use Copy.")+'</p></div>';
 }
 
 function render(){
   document.getElementById("ghbox").innerHTML=ghBox();
-  var open=items.filter(function(i){return i.open;}), done=items.filter(function(i){return !i.open;});
-  var h='<header><span class="eyebrow">Vectura · field list</span><h1>Vectura Wanted</h1>'
-   +'<p class="lede">Prices a script could not reach — bot walls, login gates, or facts the brand simply does not publish. A real browser or a shop floor gets them in seconds. Read this before a trip.</p></header>'
-   +'<div class="sect">Open — '+open.length+'</div>';
-  open.forEach(function(i){h+=card(i);});
-  if(done.length){h+='<div class="sect">Answered</div>';done.forEach(function(i){h+=card(i);});}
-  h+='<footer>Answers are kept in this browser and filed to GitHub as issues when connected. The page is static — no backend, no account, nothing stored server-side.<br>Everything here is public retail information: brands, models, shelf prices.</footer>';
+  var gate=S.gate, mech=S.mechanisms.filter(function(m){return m.unratified||m.scaffold;});
+  var done=S.mechanisms.filter(function(m){return !(m.unratified||m.scaffold);});
+  var h='<header><span class="eyebrow">Vectura · your desk</span><h1>What is waiting for you</h1>'
+   +'<p class="lede">Every open decision and every section only you can write, in one place. Each one files itself to the project when you save it. Nothing else needs your attention.</p>'
+   +'<div class="counts"><span class="pill'+(gate.length?"":" z")+'">'+gate.length+' to decide</span>'
+   +'<span class="pill'+(mech.length?"":" z")+'">'+mech.length+' to write</span>'
+   +'<span class="pill'+(S.questions.length+S.wanted.length?"":" z")+'">'+(S.questions.length+S.wanted.length)+' to answer</span>'
+   +'<span class="pill'+(S.backlog.length?"":" z")+'">'+S.backlog.length+' to queue</span>'
+   +'<span class="pill z">'+S.ledger.rows+' rows in the ledger</span></div></header>';
+
+  h+='<div class="sect"><h2>Decide</h2><p>Promote into the ledger, hold, or kill. Blank means nothing happens.</p></div>';
+  h+= gate.length ? gate.map(gateCard).join("") : '<div class="empty">Nothing at the gate.</div>';
+
+  h+='<div class="sect"><h2>Write</h2><p>The argument sections. These are yours — they are what you say when someone pushes back.</p></div>';
+  h+= mech.length ? mech.map(mechCard).join("") : '<div class="empty">Every mechanism is written.</div>';
+
+  if(S.questions.length||S.wanted.length){
+    h+='<div class="sect"><h2>Answer</h2><p>Open questions, and prices only you can get.</p></div>';
+    S.questions.forEach(function(q,i){h+=simpleCard("q","Q-"+(i+1),q.text,"","question-answer","One sentence is enough.");});
+    S.wanted.forEach(function(w){h+=simpleCard("w",w.id,w.title,w.need,"wanted-answer","Price, where you saw it, model number.");});
+  }
+  if(S.backlog.length){
+    h+='<div class="sect"><h2>Queue</h2><p>Cases the sweep surfaced. Only you promote a candidate into the research queue.</p></div>';
+    S.backlog.forEach(function(b){h+=simpleCard("b",b.brand+" ("+b.market+")",b.brand+" → "+b.market,b.why,"backlog-queue","QUEUED, or KILL with a reason.");});
+  }
+  if(done.length){
+    h+='<div class="sect"><h2>Written</h2><p>Nothing needed here — shown so you can see the whole board.</p></div>';
+    h+=done.map(mechCard).join("");
+  }
+  h+='<footer>Built from the project on '+esc(S.generated)+'. Saved answers stay in this browser and file to the project as issues.<br>Public retail facts and your own argument text only.</footer>';
   document.getElementById("app").innerHTML=h;
-  var n=Object.keys(saved).length, u=unsent().length;
-  document.getElementById("bn").innerHTML=n?("<b>"+n+"</b> answered"+(u?" · <b>"+u+"</b> not filed":" · all filed")):"Nothing answered yet";
-  document.getElementById("sendall").disabled=!token||!u;
+  var p=pending().length, n=Object.keys(drafts).length;
+  document.getElementById("bn").innerHTML = n? ("<b>"+n+"</b> written · "+(p?("<b>"+p+"</b> not filed"):"all filed")) : "Nothing written yet";
+  document.getElementById("sendall").disabled=!token||!p;
   wire();
 }
+
+function ghBox(){
+  if(token) return '<div class="gh"><div class="st"><span class="dot on"></span>Connected — everything you save files itself</div>'
+    +'<div class="row"><button id="ghout">Disconnect</button></div></div>';
+  return '<div class="gh"><div class="st"><span class="dot"></span>Not connected — saves stay on this device</div>'
+   +'<p>Connect once and every decision and every paragraph files itself to the project. The token is stored only in this browser.</p>'
+   +'<details><summary>Make a token — 1 minute</summary><ol>'
+   +'<li><b>github.com → Settings → Developer settings → Personal access tokens → Fine-grained → Generate new</b></li>'
+   +'<li>Resource owner <code>'+esc(CFG.owner)+'</code>, only the <code>'+esc(CFG.repo)+'</code> repository</li>'
+   +'<li>Repository permissions → <b>Issues: Read and write</b>. Nothing else.</li></ol></details>'
+   +'<label><input type="password" id="ghtok" autocomplete="off" spellcheck="false" placeholder="github_pat_…"></label>'
+   +'<div class="row"><button class="p" id="ghsave">Connect</button></div></div>';
+}
+
 function each(s,f){Array.prototype.forEach.call(document.querySelectorAll(s),f);}
+function val(k,f){var el=document.querySelector('[data-f="'+k+'|'+f+'"]');return el?el.value.trim():"";}
 
 function wire(){
-  each("[data-save]",function(b){b.onclick=function(){doSave(b.getAttribute("data-save"),b);};});
-  each("[data-send]",function(b){b.onclick=function(){
-    if(!token){ghOpen=true;toast("Connect GitHub first");window.scrollTo({top:0,behavior:"smooth"});return;}
-    b.disabled=true;b.textContent="Filing…";
-    send(b.getAttribute("data-send")).then(function(){render();toast("Filed to GitHub");},
-      function(e){render();toast(why(e));});};});
-  each("[data-clear]",function(b){b.onclick=function(){delete saved[b.getAttribute("data-clear")];store();render();toast("Cleared");};});
-  each("[data-edit]",function(b){b.onclick=function(){var id=b.getAttribute("data-edit"),v=saved[id];delete saved[id];store();render();
-    var f=document.getElementById("f-"+id);if(f&&v){["price","currency","how","where","url","note"].forEach(function(k){var el=f.querySelector('[data-f="'+k+'"]');if(el&&v[k])el.value=v[k];});f.scrollIntoView({block:"center"});}};});
+  each("[data-mark]",function(b){b.onclick=function(){
+    var a=b.getAttribute("data-mark").split("|"),k=a[0],mark=a[1];
+    var id=k.split(":")[1];
+    var note=(document.querySelector('[data-note="'+k+'"]')||{}).value||"";
+    var g=S.gate.filter(function(x){return x.id===id;})[0]||{};
+    saveDraft(k,{mark:mark,label:"gate-decision",title:"Gate: "+mark+" — "+id,
+      body:["**Decision: `"+mark+"`**","","| field | value |","|---|---|","| proposal | "+id+" |","| subject | "+(g.subject||"")+" |",
+            "| mechanism | "+(g.mechanism||"")+" |","| direction | "+(g.direction||"")+" |","",
+            note?("**Reasoning:** "+note):"", "","_Filed from the desk. This is Rahut's mark; the promoter applies it._"].join("\n")});
+    if(token) file(k).then(render,function(e){render();toast(why(e));});
+  };});
+  each("[data-ratify]",function(b){b.onclick=function(){
+    var k=b.getAttribute("data-ratify"), id=k.split(":")[1];
+    saveDraft(k,{label:"mechanism-text",title:"Mechanism "+id+": ratified as drafted",
+      body:"**Ratified as drafted.** Remove the unratified banner from `"+id+"` and treat the argument as mine.\n\n_Filed from the desk._"});
+    if(token) file(k).then(render,function(e){render();toast(why(e));});
+  };});
+  each("[data-write]",function(b){b.onclick=function(){
+    var k=b.getAttribute("data-write"), id=k.split(":")[1];
+    var c=val(k,"confidence"), ch=val(k,"change"), cl=val(k,"claim");
+    if(!c&&!ch&&!cl){toast("Write something first");return;}
+    var parts=["**My words for "+id+".** Apply verbatim; do not rewrite.",""];
+    if(cl){parts.push("## Claim","",cl,"");}
+    if(c){parts.push("## Confidence","",c,"");}
+    if(ch){parts.push("## What would change my mind","",ch,"");}
+    parts.push("_Filed from the desk. Sections left blank keep their current text._");
+    saveDraft(k,{label:"mechanism-text",title:"Mechanism "+id+": my text",body:parts.join("\n")});
+    if(token) file(k).then(render,function(e){render();toast(why(e));});
+  };});
+  each("[data-simple]",function(b){b.onclick=function(){
+    var a=b.getAttribute("data-simple").split("|"),k=a[0],label=a[1],title=a[2];
+    var t=val(k,"text"); if(!t){toast("Write something first");return;}
+    saveDraft(k,{label:label,title:(label==="question-answer"?"Answer: ":label==="backlog-queue"?"Backlog: ":"WANTED answer: ")+title.slice(0,60),
+      body:"**"+title+"**\n\n"+t+"\n\n_Filed from the desk._"});
+    if(token) file(k).then(render,function(e){render();toast(why(e));});
+  };});
+  each("[data-undo]",function(b){b.onclick=function(){delete drafts[b.getAttribute("data-undo")];sv();render();};});
   var s=document.getElementById("ghsave");
-  if(s) s.onclick=function(){
-    var t=(document.getElementById("ghtok").value||"").trim();
+  if(s) s.onclick=function(){var t=(document.getElementById("ghtok").value||"").trim();
     if(!t){toast("Paste a token first");return;}
-    s.disabled=true;s.textContent="Checking…";saveTok(t);
-    gh("").then(function(){render();toast("Connected");},function(e){saveTok("");render();toast(why(e));});
-  };
-  var o=document.getElementById("ghout"); if(o) o.onclick=function(){saveTok("");render();toast("Disconnected");};
-  var tst=document.getElementById("ghtest");
-  if(tst) tst.onclick=function(){tst.disabled=true;tst.textContent="Checking…";
-    gh("").then(function(){render();toast("Token works");},function(e){render();toast(why(e));});};
+    s.disabled=true;s.textContent="Checking…";stok(t);
+    gh("").then(function(){render();toast("Connected");},function(e){stok("");render();toast(why(e));});};
+  var o=document.getElementById("ghout"); if(o) o.onclick=function(){stok("");render();toast("Disconnected");};
 }
 
-function doSave(id,btn){
-  var f=document.getElementById("f-"+id);
-  var g=function(n){var el=f.querySelector('[data-f="'+n+'"]');return el?el.value.trim():"";};
-  if(!g("price")){toast("Needs a price");return;}
-  if(!g("currency")){toast("Needs a currency");return;}
-  saved[id]={price:g("price"),currency:g("currency"),how:g("how"),where:g("where"),url:g("url"),note:g("note"),date:today()};
-  store();
-  if(!token){render();toast("Saved on this device — connect GitHub to file it");return;}
-  btn.disabled=true;btn.textContent="Filing…";
-  send(id).then(function(){render();toast("Saved and filed to GitHub");},
-    function(e){render();toast("Saved here, but not filed: "+why(e));});
-}
-
-function blockText(){
-  var out=["VECTURA WANTED — answers ("+today()+")",""];
-  Object.keys(saved).forEach(function(id){
-    var a=saved[id],it=items.filter(function(i){return i.id===id;})[0]||{};
-    out.push(id+" · "+(it.title||""));
-    out.push("  price: "+a.price+" "+a.currency);
-    out.push("  how:   "+a.how+(a.where?" — "+a.where:""));
-    if(a.url) out.push("  url:   "+a.url);
-    if(a.note) out.push("  note:  "+a.note);
-    out.push("  date:  "+a.date+(a.issue?"  (issue #"+a.issue+")":""));
-    out.push("");
-  });
-  return out.join("\n");
-}
-document.getElementById("copyall").onclick=function(){
-  if(!Object.keys(saved).length){toast("Nothing to copy yet");return;}
-  var t=blockText();
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast("Copied — paste it to Claude");},fb);}else fb();
-  function fb(){var ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";
-    document.body.appendChild(ta);ta.focus();ta.select();
-    try{document.execCommand("copy");toast("Copied — paste it to Claude");}catch(e){
-      var pre=document.createElement("pre");pre.textContent=t;document.getElementById("app").appendChild(pre);pre.scrollIntoView({block:"center"});toast("Select the text and copy");}
-    document.body.removeChild(ta);}
-};
 document.getElementById("sendall").onclick=function(){
-  var u=unsent(); if(!token||!u.length) return;
-  var btn=this; btn.disabled=true; btn.textContent="Filing…";
-  u.reduce(function(p,id){return p.then(function(){return send(id);});},Promise.resolve())
-   .then(function(){render();toast("Filed "+u.length+" to GitHub");},
-         function(e){render();toast(why(e));});
+  var p=pending(); if(!token||!p.length||busy) return;
+  busy=true; this.disabled=true; this.textContent="Filing…";
+  p.reduce(function(a,k){return a.then(function(){return file(k);});},Promise.resolve())
+   .then(function(){busy=false;render();toast("Filed "+p.length);},
+         function(e){busy=false;render();toast(why(e));});
 };
-
 render();
 })();
 </script>
