@@ -84,25 +84,61 @@ footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-si
 
 <script id="items" type="application/json">
 [
- {"id":"W-003","open":true,"market":"VN","title":"Zojirushi — a Japan-side price, or any 100V grey-import listing",
-  "need":"One rice-cooker model priced on BOTH sides of the border. Either a Japan-domestic model a Vietnamese dealer also sells, or a “Nội địa Nhật 100V” grey-import listing showing a Japan-domestic model priced in VND.",
-  "done":"A dealer page or a shop photo showing a Japan-domestic (100V) model with its VND price and the model number legible — donhatnoidia.com, tulanhnhatbai.com, japanshoptht.vn and congnghenhat.com all carry this category. Or any Vietnamese listing of a model that also exists on zojirushi.co.jp.",
-  "tried":"Both official line-ups were checked model by model. All seven Vietnamese codes (NL-AAQ, NL-GAQ, NP-BSQ, NP-HBQ, NP-HRQ, NS-RPQ, NP-VI) return zero results on zojirushi.co.jp — re-verified 2026-09-01, including the NL-AAQ18-CA found on the official Vietnamese distributor site. Tiger's Vietnamese line-up shares no live model code with its Japanese one either. The official channels cannot produce a matched pair; only the grey channel can.",
-  "why":"If the grey channel really is the only route to a same-model comparison, that unpriceability is itself the finding — a price architecture built so it cannot be compared across the border."},
-
- {"id":"W-001","open":false,"market":"VN","title":"Zojirushi rice cooker — Vietnam price",
-  "need":"A Vietnamese price for a Zojirushi rice cooker, with the model number.",
-  "done":"Answered.",
-  "tried":"Official Vietnamese distributor channel.",
-  "answer":{"price":"5,690,000","currency":"VND","how":"browser","where":"zojirushi.com.vn (official distributor)","url":"https://zojirushi.com.vn/","date":"2026-09-01",
-   "note":"List price; currently discounted to 5,099,000 ₫. Model NL-AAQ18-CA, 1.8L. Entered as 5099 — the page reads 5.099.000 ₫, since Vietnamese sites use “.” as the thousands separator. Recorded, but it does not produce a matched pair: NL-AAQ18 returns no results on zojirushi.co.jp, so the Vietnamese line-up is export-only. That is what W-003 is for."}},
-
- {"id":"W-002","open":false,"market":"TH","title":"MUJI Thailand — Ultrasonic Aroma Diffuser MJ-UAD1",
-  "need":"The Thai retail price of the MUJI ultrasonic aroma diffuser.",
-  "done":"Answered and resolved.",
-  "tried":"The official Thai retail site is behind a bot challenge that no header combination passes.",
-  "answer":{"price":"2,890","currency":"THB","how":"browser","where":"Shopee (third-party seller)","url":"","date":"2026-09-01",
-   "note":"Resolved as reseller pricing, not an official price. A Thai price aggregator indexes about thirty merchants carrying MUJI aroma diffusers, and none is a MUJI official store — anonymous reseller handles, TikTok Shop and Lazada sellers, several listings explicitly second-hand, prices spanning ฿79–3,490. Kept as evidence in its own right: the reseller layer sits roughly 16% above the ฿2,490 official list price."}}
+ {
+  "id": "W-003",
+  "open": false,
+  "market": "VN",
+  "title": "Zojirushi — a Japan-side price, or any 100V grey-import listing",
+  "need": "A Vietnamese price for a Japan-domestic rice-cooker model, with the model number.",
+  "done": "Answered.",
+  "tried": "The official line-ups are disjoint by construction, so no official channel could produce a matched pair. The grey channel did.",
+  "why": "If the grey channel really is the only route to a same-model comparison, that unpriceability is itself the finding — a price architecture built so it cannot be compared across the border.",
+  "answer": {
+   "price": "5,000,000",
+   "currency": "VND",
+   "how": "browser",
+   "where": "hiephongjapan.vn (parallel importer)",
+   "url": "https://hiephongjapan.vn/noi-com-zojirushi",
+   "date": "2026-09-02",
+   "note": "Zojirushi NW-VC18, 1.8L IH, listed as 「Hàng nội địa Nhật Bản」 (Japan-domestic goods); dealer reference price 7,050,000 ₫. Japan side ¥24,500 (kakaku.com, matching amazon.co.jp) → index 1.25. The first model in this project priced on both sides of the border — and it only exists because the grey channel imports the actual Japanese unit."
+  }
+ },
+ {
+  "id": "W-001",
+  "open": false,
+  "market": "VN",
+  "title": "Zojirushi rice cooker — Vietnam price",
+  "need": "A Vietnamese price for a Zojirushi rice cooker, with the model number.",
+  "done": "Answered.",
+  "tried": "Official Vietnamese distributor channel.",
+  "answer": {
+   "price": "5,690,000",
+   "currency": "VND",
+   "how": "browser",
+   "where": "zojirushi.com.vn (official distributor)",
+   "url": "https://zojirushi.com.vn/",
+   "date": "2026-09-01",
+   "note": "List price; currently discounted to 5,099,000 ₫. Model NL-AAQ18-CA, 1.8L. Entered as 5099 — the page reads 5.099.000 ₫, since Vietnamese sites use “.” as the thousands separator. Recorded, but it does not produce a matched pair: NL-AAQ18 returns no results on zojirushi.co.jp, so the Vietnamese line-up is export-only. That is what W-003 is for."
+  }
+ },
+ {
+  "id": "W-002",
+  "open": false,
+  "market": "TH",
+  "title": "MUJI Thailand — Ultrasonic Aroma Diffuser MJ-UAD1",
+  "need": "The Thai retail price of the MUJI ultrasonic aroma diffuser.",
+  "done": "Answered and resolved.",
+  "tried": "The official Thai retail site is behind a bot challenge that no header combination passes.",
+  "answer": {
+   "price": "2,890",
+   "currency": "THB",
+   "how": "browser",
+   "where": "Shopee (third-party seller)",
+   "url": "",
+   "date": "2026-09-01",
+   "note": "Resolved as reseller pricing, not an official price. A Thai price aggregator indexes about thirty merchants carrying MUJI aroma diffusers, and none is a MUJI official store — anonymous reseller handles, TikTok Shop and Lazada sellers, several listings explicitly second-hand, prices spanning ฿79–3,490. Kept as evidence in its own right: the reseller layer sits roughly 16% above the ฿2,490 official list price."
+  }
+ }
 ]
 </script>
 
