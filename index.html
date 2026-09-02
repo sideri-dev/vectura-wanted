@@ -169,7 +169,7 @@ function render(){
    +'<span class="pill'+(mech.length?"":" z")+'">'+mech.length+' to write</span>'
    +'<span class="pill'+(S.questions.length+S.wanted.length?"":" z")+'">'+(S.questions.length+S.wanted.length)+' to answer</span>'
    +'<span class="pill'+(S.backlog.length?"":" z")+'">'+S.backlog.length+' to queue</span>'
-   +'<span class="pill z">'+S.ledger.rows+' rows in the ledger</span></div></header>';
+   +'<a class="pill z" style="text-decoration:none" href="https://vectura.sideri.io">'+S.ledger.rows+' rows in the ledger →</a></div></header>';
 
   h+='<div class="sect"><h2>Decide</h2><p>Promote into the ledger, hold, or kill. Blank means nothing happens.</p></div>';
   h+= gate.length ? gate.map(gateCard).join("") : '<div class="empty">Nothing at the gate.</div>';
