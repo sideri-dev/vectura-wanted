@@ -56,7 +56,7 @@ h2{font-size:17px;font-weight:700;margin:34px 0 4px}
 .par{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--line-strong);border-radius:1px}
 .dot{position:absolute;top:1px;width:13px;height:13px;border-radius:50%;margin-left:-6.5px;box-shadow:0 0 0 2px var(--surface-1)}
 .axis{position:relative;height:20px;margin-top:6px;border-top:1px solid var(--line)}
-.axis i{position:absolute;top:4px;transform:translateX(-50%);font-family:var(--mono);font-size:10.5px;color:var(--muted);font-style:normal}
+.axis i{position:absolute;top:4px;transform:translateX(-50%);white-space:nowrap;font-family:var(--mono);font-size:10.5px;color:var(--muted);font-style:normal}
 .note{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6}
 table{width:100%;border-collapse:collapse;margin-top:6px;font-size:13px}
 th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:8px 9px;border-bottom:2px solid var(--line-strong);white-space:nowrap}
@@ -109,8 +109,11 @@ function chart(){
     });
   });
   h+='<div class="axis">';
-  [0,0.5,1,1.5,2,2.5,3].forEach(function(t){
-    h+='<i style="left:'+pct(t).toFixed(2)+'%">'+(t===1?"1.0 parity":t.toFixed(1))+'</i>';});
+  // Four ticks, not seven: at phone width seven collide, and "1.0 parity"
+  // needs the room. The legend already names the parity rule.
+  [0,1,2,3].forEach(function(t){
+    var st=t===0?'left:0;transform:none':(t===3?'right:0;left:auto;transform:none':'left:'+pct(t).toFixed(2)+'%');
+    h+='<i style="'+st+'">'+(t===1?"1.0 parity":t.toFixed(1))+'</i>';});
   h+='</div><p class="note"><b>Read it this way:</b> if divergence from the Japanese price explained the outcome, the three groups would separate along this axis. They do not. Cases that held their position run from 0.64 to 2.85 — the full width of the chart — while both cases that eroded sit in the middle of that range.</p></div>';
   return h;
 }
